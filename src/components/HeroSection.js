@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./HeroSection.css";
 import { Button } from "./pages/Button";
 
-function HeroSection({    
+function HeroSection({
   lightBg,
   topLine,
   lightText,
@@ -14,19 +14,16 @@ function HeroSection({
   img,
   alt,
   imgStart,
-})
-
-{
-
- 
-  
+}) {
   return (
     <>
       <div
         className={lightBg ? "home__hero-section" : "home__hero-section darkBg"}
       >
         <div className="container">
-          <div className="row home__hero-row" style={{
+          <div
+            className="row home__hero-row"
+            style={{
               display: "flex",
               flexDirection: imgStart === "start" ? "row-reverse" : "row",
             }}

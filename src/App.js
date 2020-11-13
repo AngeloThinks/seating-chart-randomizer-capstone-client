@@ -7,7 +7,8 @@ import About from './components/pages/AboutPage/About';
 import Profile from './components/pages/ProfilePage/Profile';
 import Roster from "./components/pages/RosterPage/Roster";
 import Footer from './components/pages/Footer/Footer';
-import SignUp from './components/pages/SignUpPage/SignUp'
+import Form from "./components/pages/SignupPage/Form";
+
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path='/About' component={About}/>
         <Route path='/Roster' component={Roster}/>
         <Route path='/Profile' component={Profile}/>
-        <Route path='/SignUp' component={SignUp}/>
+        <Route path='/Form' component={Form}/>
 
 
       </Switch>
