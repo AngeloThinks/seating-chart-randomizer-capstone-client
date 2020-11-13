@@ -22,8 +22,8 @@
   .form-content-left {
     background: linear-gradient(
       90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
+      #1c2237 0%,
+      #1c2237 100%
     );
     border-radius: 10px 0 0 10px;
     position: relative;
@@ -36,6 +36,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 0;
+    max-width: 100%;
+    vertical-align: right;
+    display: inline-block;
   }
   
   .form-img-2 {
@@ -57,7 +61,7 @@
   .form-content-right {
     border-radius: 0 10px 10px 0;
     position: relative;
-    background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+    background: linear-gradient(90deg, #093679 0%,#093679 100%);
   }
   
   .form {
@@ -121,8 +125,8 @@
     border-radius: 2px;
     background: linear-gradient(
       90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
+      #093679 0%,
+      #093679 100%
     );
     outline: none;
     border: none;
@@ -134,8 +138,8 @@
     cursor: pointer;
     background: linear-gradient(
       90deg,
-      rgb(39, 143, 255) 0%,
-      rgb(12, 99, 250) 100%
+      #276afb 0%,
+      #276afb 100%
     );
     transition: all 0.4s ease-out;
   }

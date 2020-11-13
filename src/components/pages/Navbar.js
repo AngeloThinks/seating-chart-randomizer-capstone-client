@@ -46,24 +46,24 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/About" className="nav-links" onClick={closeMobileMenu}>
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/Roster" className="nav-links" onClick={closeMobileMenu}>
                   Roster
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/Profile" className="nav-links" onClick={closeMobileMenu}>
                   Profile
                 </Link>
               </li>
               <li className="nav-btn">
                 {button ? (
                   <Link
-                    to="/sign-up"
+                    to="/Form"
                     className="btn-link"
                     onClick={closeMobileMenu}
                   >
@@ -71,7 +71,7 @@ function Navbar() {
                   </Link>
                 ) : (
                   <Link
-                    to="/sign-up"
+                    to="/Form"
                     className="btn-link"
                     onClick={closeMobileMenu}
                   >
@@ -85,7 +85,7 @@ function Navbar() {
               <li className="nav-btn">
                 {button ? (
                   <Link
-                    to="/sign-up"
+                    to="/Form"
                     className="btn-link"
                     onClick={closeMobileMenu}
                   >
@@ -93,7 +93,7 @@ function Navbar() {
                   </Link>
                 ) : (
                   <Link
-                    to="/sign-up"
+                    to="/Form"
                     className="btn-link"
                     onClick={closeMobileMenu}
                   >

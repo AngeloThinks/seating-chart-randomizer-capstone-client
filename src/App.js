@@ -21,8 +21,6 @@ function App() {
         <Route path='/Roster' component={Roster}/>
         <Route path='/Profile' component={Profile}/>
         <Route path='/Form' component={Form}/>
-
-
       </Switch>
       <Footer />
     </div>
