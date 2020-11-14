@@ -1,14 +1,12 @@
-//validate the fields 
-import { useState, useEffect } from 'react';
+import { useLoginState, useLoginEffect } from 'react';
 
-const useForm = (callback, validate) => {
-  const [values, setValues] = useState({
+const useLoginForm = (callback, validate) => {
+  const [values, setValues] = useLoginState({
     email: '',
-    password: '',
-    password2: ''
+    password: ''
   });
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useLoginState({});
+  const [isSubmitting, setIsSubmitting] = useLoginState(false);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -25,7 +23,7 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
   };
 
-  useEffect(
+  useLoginEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
         callback();
@@ -37,4 +35,4 @@ const useForm = (callback, validate) => {
   return { handleChange, handleSubmit, values, errors };
 };
 
-export default useForm;
+export default useLoginForm;

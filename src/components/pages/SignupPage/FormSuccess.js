@@ -1,3 +1,5 @@
+//success form and redirects to profile page
+
 import React from 'react'
 
 const FormSuccess = () => {

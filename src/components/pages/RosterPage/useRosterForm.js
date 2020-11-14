@@ -1,7 +1,7 @@
 //validate the fields 
 import { useState, useEffect } from 'react';
 
-const useForm = (callback, validate) => {
+const useRosterForm = (callback, validate) => {
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -37,4 +37,4 @@ const useForm = (callback, validate) => {
   return { handleChange, handleSubmit, values, errors };
 };
 
-export default useForm;
+export default useRosterForm;

@@ -1,6 +1,6 @@
 //error handler for the validation fields
 
-export default function validateInfo(values) {
+export default function validateRosterInfo(values) {
     let errors = {}
 
     if (!values.email) {

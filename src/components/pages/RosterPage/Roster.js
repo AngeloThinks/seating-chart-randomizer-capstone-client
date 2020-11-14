@@ -1,13 +1,37 @@
-import React from "react";
-import HeroSection from "../../HeroSection";
-import {homeObjFour} from "../../pages/Store"
+//this page is the logic for the submit form
 
-function Roster() {
+import React, { useState } from "react";
+import Rosterform from "./RosterForm";
+import "./RosterForm.css";
+
+const Roster = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  function submitForm() {
+    setIsSubmitted(true);
+  }
+
   return (
     <>
-      <HeroSection {...homeObjFour} />
+      <div className="roster-form-container">
+        <span className="roster-close-btn"></span>
+        <div className="roster-form-content-left">
+          <img
+            src="images/hen-chickens.svg"
+            alt="hen-chicken"
+            className="form-img"
+          />
+        </div>
+
+        {!isSubmitted ? (
+          <Rosterform submitForm=
+          {submitForm} />
+        ) : (
+          <Roster />
+        )}
+      </div>
     </>
   );
-}
+};
 
 export default Roster;

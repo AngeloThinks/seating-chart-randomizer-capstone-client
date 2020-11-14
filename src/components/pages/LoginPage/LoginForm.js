@@ -1,22 +1,19 @@
-//this page is the logic for the submit form
-
 import React, { useState } from "react";
-import FormSignup from "./FormSignup";
-import FormSuccess from "./FormSuccess";
-import "./Form.css";
+import LoginFormPage from "./LoginFormPage";
+import "./LoginForm.css";
 
-const Form = () => {
+const LoginForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function submitForm() {
+  function submitLoginForm() {
     setIsSubmitted(true);
   }
 
   return (
     <>
-      <div className="form-container">
+      <div className="login-form-container">
         <span className="close-btn"></span>
-        <div className="form-content-left">
+        <div className="login-form-content-left">
           <img
             src="images/hen-chickens.svg"
             alt="hen-chicken"
@@ -25,14 +22,14 @@ const Form = () => {
         </div>
 
         {!isSubmitted ? (
-          <FormSignup submitForm=
-          {submitForm} />
+          <LoginFormPage submitLoginForm=
+          {submitLoginForm} />
         ) : (
-          <FormSuccess />
+          <LoginFormPage />
         )}
       </div>
     </>
   );
 };
 
-export default Form;
+export default LoginForm;
