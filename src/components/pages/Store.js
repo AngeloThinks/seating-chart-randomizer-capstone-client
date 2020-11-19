@@ -3,9 +3,9 @@ export const homeObjOne = {
     lightText: true,
     lightTextDesc: true,
     topLine: 'Welcome to Roost!',
-    headline: "An app for teachers,",
-    description: "that helps randomize seating charts",
-    buttonLabel: 'Get Started',
+    headline: "An app for teachers!",
+    description: "",
+    buttonLabel: 'REMOVE THIS BUTTON',
     imgStart:'',
     img: 'images/rooster.svg',
     alt: 'Rooster'
@@ -16,27 +16,14 @@ export const homeObjTwo = {
     lightTextDesc: true,
     topLine: 'About Roost',
     headline: "What's Roost?",
-    description: "Roost is an app designed for teachers. Roost helps randomize seating charts and allows you to focus on other necessities.",
-    buttonLabel: 'Get Started',
+    description: "Roost helps shuffle your seating charts so you can focus on other tasks.",
+    buttonLabel: 'REMOVE THIS BUTTON',
     imgStart:'',
     img: 'images/rooster-left.svg',
     alt: 'Rooster'
 }
 
 export const homeObjThree = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
-    topLine: 'Roost Rosters',
-    headline: "It's easy to start!",
-    description: "Simply fill out the form, and add to your roster. Click the button below to get started",
-    buttonLabel: 'Get Started',
-    imgStart:'',
-    img: 'images/small-chicks.svg',
-    alt: 'Rooster'
-}
-
-export const homeObjFour = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
@@ -47,6 +34,21 @@ export const homeObjFour = {
     imgStart:'',
     img: 'images/hen-chickens.svg',
     alt: 'Chickens Hatching'
+
+}
+
+export const homeObjFour = {
+
+    // lightBg: false,
+    // lightText: true,
+    // lightTextDesc: true,
+    // topLine: 'Roost Rosters',
+    // headline: "It's easy to start!",
+    // description: "Simply fill out the form, and add to your roster. Click the button below to get started",
+    // buttonLabel: 'Get Started',
+    // imgStart:'',
+    // img: 'images/small-chicks.svg',
+    // alt: 'Rooster'
 }
 
 

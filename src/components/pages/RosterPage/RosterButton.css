@@ -1,3 +1,5 @@
+@https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+
 :root {
     --primary: #fff;
   }
@@ -109,4 +111,29 @@
   
   .green:hover {
     background-color: #242424;
+  }
+
+  /* /////////////////////////////////CircleButton///////////////////// */
+
+  .NavCircleButton {
+    background-color: #cacaca;
+    border-radius: 30px;
+    border: 0;
+    color: black;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 60px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    width: 60px;
+  }
+  
+  a.NavCircleButton {
+    padding: 16px 8px 8px;
+  }
+  
+  .NavCircleButton:hover {
+    cursor: pointer;
   }

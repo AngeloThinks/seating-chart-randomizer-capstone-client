@@ -4,7 +4,6 @@ import {
   homeObjOne,
   homeObjTwo,
   homeObjThree,
-  homeObjFour,
 } from "../../pages/Store";
 
 function Home() {
@@ -13,7 +12,6 @@ function Home() {
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjTwo} />
       <HeroSection {...homeObjThree} />
-      <HeroSection {...homeObjFour} />
     </>
   );
 }

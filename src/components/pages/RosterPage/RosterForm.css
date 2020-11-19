@@ -17,7 +17,7 @@
   }
   
   .roster-close-btn {
-    position: absolute;
+    position: relative;
     top: 2%;
     right: 3%;
     font-size: 1.roster-5rem;
@@ -39,7 +39,7 @@
   .form-img {
     width: 100%;
     height: 80%;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -52,7 +52,7 @@
   .form-img-2 {
     width: 60%;
     height: 60%;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -72,7 +72,7 @@
   }
   
   .roster-form {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -192,10 +192,10 @@
       position: relative;
     }
     
-    .form-img {
+    .roster-form-img {
       width: 80%;
       height: 80%;
-      position: absolute;
+      position: relative;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -205,10 +205,10 @@
       display: inline-block;
     }
     
-    .form-img-2 {
+    .roster-form-img-2 {
       width: 60%;
       height: 60%;
-      position: absolute;
+      position: relative;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -221,7 +221,7 @@
     }
     
     .roster-form {
-      position: absolute;
+      position: relative;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -234,6 +234,8 @@
     }
 }
 
+
+
 @media screen and (max-width: 
 768px) {
     .roster-home__hero-text-wrapper{
@@ -243,3 +245,231 @@
     
 
   }
+
+/* ///////////////////////////////////////Roster///////////////////////////////////// */
+
+.Roster {
+  --custom-font: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  display: grid;
+  grid-template-areas: "sidebar header" "sidebar main";
+  grid-template-columns: 1fr 2.3fr;
+  grid-template-rows: 120px 1fr;
+  min-height: 100vh;
+}
+
+.Roster__nav {
+  background-color: #0b1b32;
+  color: #fff;
+  grid-area: sidebar;
+  height: 100vh;
+  overflow: auto;
+}
+
+.Roster__header {
+  background-color: #0b1f3a;
+  color: #bdbdbd;
+  font-family: var(--custom-font);
+  grid-area: header;
+  padding-left: 16px;
+  padding-top: 32px;
+  text-shadow: 2px 1px 2px black;
+}
+
+.Roster__header a {
+  color: #bdbdbd;
+}
+
+.Roster__main {
+  background-color: #0b1f3a;
+  grid-area: main;
+  height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+/* ////////////////////////////////////StudentListtNav///////////////////   */
+.StudentListNav__folder-link {
+  background-color: #030f1f;
+  color: #b5b3b3;
+  display: block;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: 0 0 8px auto;
+  max-width: 180px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.StudentListNav__folder-link:hover {
+  color: #FFB72F;
+  cursor: pointer;
+}
+.StudentListNav__folder-link.Rosterive {
+  background-color: #1c2237;
+}
+
+.StudentListNav__num-notes {
+  color: #adadad;
+  display: block;
+  float: right;
+  font-size: 10px;
+}
+
+
+.StudentListNav__list {
+  list-style-type: none;
+  margin: 130px 0 0;
+  padding: 0;
+}
+
+.StudentListNav__button-wrapper {
+  margin: 0 0 0 auto;
+  max-width: 180px;
+}
+
+.StudentListNav__add-folder-button {
+  margin: 20px auto;
+}
+.StudentListNav__add-folder-button:hover {
+  background-color: #29862e;
+  color: white;
+}
+
+.StudentListNav__folder-link {
+  background-color: #030f1f;
+  color: #b5b3b3;
+  display: block;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: 0 0 8px auto;
+  max-width: 180px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.StudentListNav__folder-link:hover {
+  color: #FFB72F;
+  cursor: pointer;
+}
+.StudentListNav__folder-link.Studentactive {
+  background-color: #102541;
+}
+
+.StudentListNav__num-notes {
+  color: #adadad;
+  display: block;
+  float: right;
+  font-size: 10px;
+}
+
+
+/* //////////////////////////StudentListMain/////////////////////////////////// */
+
+
+.StudentListMain ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.StudentListMain__button-container {
+  max-width: 380px;
+  margin: 0 10px;
+}
+
+.StudentListMain__add-student-button {
+  margin: 0 auto 20px;
+}
+.StudentListMain__add-student-button:hover {
+  background-color: #29862e;
+  color: white;
+}
+/* ////////////////////////////////Student/////////////////////////////////////// */
+
+.Student {
+  --note-height: 88px;
+  background-color: #010d1e;
+  color: #cacaca;
+  height: var(--note-height);
+  margin-bottom: 8px;
+  max-width: 380px;
+  padding: 8px 0 8px 8px;
+  position: relative;
+}
+
+.Student__delete {
+  --note-button-height: 32px;
+  background-color: #041a3a;
+  border: 0;
+  color: #bdbcbc;
+  float: right;
+  font-size: 12px;
+  height: var(--note-button-height);
+  position: relative;
+  top: calc((var(--note-button-height) + 32px) * -1);
+  transform-origin: right bottom;
+  transform: rotate(-90deg);
+  width: calc(var(--note-height));
+}
+.Student__delete:hover {
+  background-color: #bd0909;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Student__title {
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: 0;
+  max-width: 80%;
+  min-height: 24px;
+}
+.Student__title a {
+  color: #cacaca;
+  display: block;
+  text-decoration: none;
+}
+.Student__title a:hover {
+  color: #FFB72F;
+}
+
+.Student__dates {
+  bottom: 8px;
+  color: #a7a5a5;
+  font-size: 14px;
+  position: relative;
+}
+/* //////////////////////////////////////////////////StudentPageMain///////////////////////////////////// */
+
+
+.StudentPageMain {
+  background-color: #efefef;
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+}
+
+.StudentPageMain__content {
+  color: #3a3939;
+  max-width: 380px;
+}
+
+/* //////////////////////////////////////////////StudentPageNav/////////////////////////// */
+.StudentPageNav__back-button {
+  margin: 45px 20px 25px auto
+}
+.StudentPageNav__back-button:hover {
+  background-color: #FFB72F;
+}
+
+.StudentPageNav__folder-name {
+  color: #b5b3b3;
+  font-family: var(--custom-font);
+  font-size: 40px;
+  height: 50vh;
+  margin: 0 0 0 auto;
+  text-orientation: upright;
+  width: 75px;
+  writing-mode: vertical-lr;
+}
+
