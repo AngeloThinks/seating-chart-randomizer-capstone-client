@@ -10,11 +10,23 @@ function HeroSection({
   lightTextDesc,
   headline,
   description,
+  hasButton,
   buttonLabel,
   img,
   alt,
   imgStart,
 }) {
+  function renderButton() {
+    return hasButton ? (
+      <Link to="/Form">
+        <Button buttonSize="btn--wide" buttonColor="blue">
+          {buttonLabel}
+        </Button>
+      </Link>
+    ) : (
+      ""
+    );
+  }
   return (
     <>
       <div
@@ -43,11 +55,7 @@ function HeroSection({
                 >
                   {description}
                 </p>
-                <Link to="/Form">
-                  <Button buttonSize="btn--wide" buttonColor="blue">
-                    {buttonLabel}
-                  </Button>
-                </Link>
+                {renderButton()}
               </div>
             </div>
             <div className="col">

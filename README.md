@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# Capstone Project Title (to do now)
+<!-- One line description of what this app is doing and who is it for -->
+Roost - An app designed for teachers to randomize seating charts.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### 1. Working Prototype (to do later)
+(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. User Stories (to do now)
+This app is for two types of users: a visitor and a logged-in user
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+###### (Example) Landing Page (Importance - High) (Est: 1h)
+* as a visitor
+* I want to understand what I can do with this app (or sign up, or log in)
+* so I can decide if I want to use it
 
-### `npm test`
+###### (Example) Login Page (Importance - High) (Est: 3h)
+* As a returning register user
+* I want to enter my password and username to use this app,
+* So I can have access to my account.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###### (Example) Sign Up (Importance - High)  (Est: 3h)
+* As a visitor
+* I want to register to use this app
+* So I can create a personal account.
 
-### `npm run build`
+###### (Example) Home Page (Importance - Medium)  (Est: 2h)
+* As a logged-in user,
+* I want to be able to preview the content of the app,
+* So i can decide what section I want to navigate to.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Functionality (to do now)
+The app's functionality includes:
+* (Example) Every User has the ability to create an account
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Technology (done)
+* Front-End: HTML5, CSS3, JavaScript ES6, React
+* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
+* Development Environment: Heroku, DBeaver
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### 5. Wireframes (to do now)
+(Example) Landing Page
+:-------------------------:
+![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
+Register Page
+![Register Page](/github-images/wireframes/register-page-wireframe.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### 6. Front-end Structure - React Components Map (to do later)
+* (Example) __Index.js__ (stateless)
+    * __App.js__ (stateful)
+        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+            * __Login.js__ (stateful) -
+            * __Register.js__ (stateful) -
+        * __Navbar.js__ (stateless) -
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 7. Back-end Structure - Business Objects (to do later)
+* teachers (database table)(parent to students to table)
+    * id (auto-generated)
+    * first_name (varchar255) (validation alpha characters with spaces min.3 max.255)
+    * last_name (varchar255) (validation alpha characters with spaces min.3 max.255)
+    * email (varchar255) (email validation)
+    * password (varchar255) (at least 8 chars, at least one alpha and a special character validation)
 
-### Making a Progressive Web App
+* classes (database table)(parent to students table)
+    * id (auto-generated)
+	* name (varchar255) (validation alpha characters with spaces min.3 max.255)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* students (database table) (child to both teachers and classes table)
+    * id (auto-generated)
+    * teacher_id FOREIGN KEY TO TEACHERS TABLE (auto-generated)
+    * classes_id FOREIGN KEY TO CLASSES TABLE (auto-generated)
+	* first_name (varchar255) (validation alpha characters with spaces min.3 max.255)
+    * last_name (varchar255) (validation alpha characters with spaces min.3 max.255)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 8. API Documentation (to do later)
+API Documentation details:
+* GET/students
+    * URL: http://localhost:8000/students
+    * Response: 
+        ```json
+        [
+            {
+                "id": "2",
+                "teachers_id": "1",
+                "classes_id": "1",
+                "first_name": "Biron",
+                "last_name": "Doge"
+            }
+        ]
+        ```
 
-### Deployment
+### 9. Screenshots (to do later)
+(Example) Landing Page
+:-------------------------:
+![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
+Register Page
+![Register Page](/github-images/screenshots/register-page-screenshot.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 10. Development Roadmap (to do later)
+This is v1.0 of the app, but future enhancements are expected to include:
+* (Example) add more functionality
+
+
+
+### 11. How to run it (done) enter Git clone commands
+Use command line to navigate into the project folder and run the following in terminal
+
+##### Local React scripts
+* To install the react project ===> npm install
+* To run react (on port 3000) ===> npm start
+* To run tests ===> npm run test
+
+##### Local Node scripts
+* To install the node project ===> npm install
+* To migrate the database ===> npm run migrate -- 1
+* To run Node server (on port 8000) ===> npm run dev
+* To run tests ===> npm run test

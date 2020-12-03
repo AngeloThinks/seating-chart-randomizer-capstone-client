@@ -35,7 +35,7 @@ export default class StudentListNav extends React.Component {
         <div className="StudentListNav__button-wrapper">
           <CircleButton
             tag={Link}
-            to="/roster/add-roster"
+            to="/roster/new/add-roster"
             type="button"
             className="StudentListNav__add-roster-button"
           >

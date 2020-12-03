@@ -1,56 +1,71 @@
 import React, { Component } from "react";
 import ValidationError from "../../../validationError";
 import ApiContext from "../../../ApiContext";
-import Config from '../../../config'
-import './RosterForm.css'
+import Config from "../../../config";
+import "./RosterForm.css";
 
 class AddStudent extends Component {
-  state = {
-    student: {
-      title: "",
-      touched: false,
-    },
-    rosterId: {
-      value: "",
-    },
-    content: {
-      value: "",
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      first_name: {
+        value: "",
+        touched: false,
+      },
+      last_name: {
+        value: "",
+        touched: false,
+      },
+      classes_id: {
+        value:"0",
+        touche: false,
+      }
+    };
+  }
 
   static contextType = ApiContext;
 
-  updateStudent(student) {
-    this.setState({ student: { title: student, touched: true } });
-    console.log(this.state.student.title);
+  updateFirst_name(first_name) {
+    console.log(first_name);
+    this.setState({ first_name: { value: first_name, touched: true } });
+    console.log(this.state.first_name.value);
   }
-
-  updateContent(content) {
-    this.setState({ content: { value: content } });
+  updateLast_name(last_name) {
+    this.setState({ last_name: { value: last_name, touched: true } });
+    console.log(this.state.last_name.value);
   }
-
+  // updateContent(content) {
+  //   this.setState({ content: { value: content } });
+  // }
   updateRosterId(id) {
-    this.setState({ rosterId: { value: id } });
+    console.log(id,'THIS IS ID')
+    this.setState({ classes_id: { value: id } });
   }
-
-  validateName() {
-    const student = this.state.student.title.trim();
-    if (student.length === 0) {
+  validateFirst_name() {
+    console.log(this.state.first_name);
+    const first_name = this.state.first_name.value.trim();
+    if (first_name.length === 0) {
+      return "Text is required";
+    }
+  }
+  validateLast_name() {
+    const last_name = this.state.last_name.value.trim();
+    if (last_name.length === 0) {
       return "Text is required";
     }
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const { student, rosterId, content } = this.state;
-    console.log(student.title);
+    const { classes_id, first_name, last_name } = this.state;
+
     const studentObj = {
-      title: student.title,
-      content: content.value,
-      roster_id: parseInt(rosterId.value),
-      
+      teachers_id: 1,
+      classes_id: classes_id.value,
+      first_name: first_name.value,
+      last_name: last_name.value,
     };
-    console.log(studentObj)
+    console.log(studentObj,"Student OBJECT");
     const url = `${Config.API_ENDPOINT}/students`;
     fetch(url, {
       method: "POST",
@@ -62,43 +77,57 @@ class AddStudent extends Component {
       .then((response) => response.json())
       .then((student) => {
         this.context.addStudent(student);
-        this.props.history.push(`/`);
+        console.log(student,'API Student')
+        this.props.history.push(`/roster`);
       });
   }
+
   render() {
+    const { first_name, last_name } = this.state;
     const { rosters } = this.context;
 
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)} style={{ color: "white" }}>
-        <label>Student Name:</label>
+      <form
+        onSubmit={(e) => this.handleSubmit(e)}
+        style={{ color: "white" }}
+      >
+        <label>First Name:</label>
         <input
           type="text"
-          placeholder="Enter student Name"
-          onChange={(e) => this.updateStudent(e.target.value)}
+          placeholder="Student First Name"
+          value={first_name.value}
+          name="first_name"
+          onChange={(e) => this.updateFirst_name(e.target.value)}
         />
-        {this.state.student.touched && (
-          <ValidationError message={this.validateName()} />
+        {this.state.first_name.touched && (
+          <ValidationError message={this.validateFirst_name()} />
         )}
-        <label>Enter Note:</label>
+        <label>Last Name:</label>
         <input
           type="text"
-          placeholder="Enter Description"
-          onChange={(e) => this.updateContent(e.target.value)}
+          placeholder="Student Last Name"
+          value={last_name.value}
+          name="last_name"
+          onChange={(e) => this.updateLast_name(e.target.value)}
         />
+        {this.state.last_name.touched && (
+          <ValidationError message={this.validateLast_name()} />
+        )}
         <label>Select Roster:</label>
         <select
           name="drop-down"
           id="drop-down"
-          onChange={(e) => this.updaterosterId(e.target.value)}
+          value={this.state.classes_id.value}
+          onChange={(e) => this.updateRosterId(e.target.value)}
         >
-          <option>Must Select roster</option>
+          <option value='0'>Must Select roster</option>
           {rosters.map((roster) => (
             <option key={roster.id} value={roster.id}>
               {roster.name}
             </option>
           ))}
         </select>
-        <button type="submit" disabled={this.validateName()}>
+        <button type="submit" disabled={this.validateFirst_name()}>
           Add
         </button>
       </form>
@@ -107,6 +136,3 @@ class AddStudent extends Component {
 }
 
 export default AddStudent;
-
-
-

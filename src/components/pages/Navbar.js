@@ -46,21 +46,33 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/about"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/roster" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/roster"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   Roster
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>
+              {/* <li className="nav-item">
+                <Link
+                  to="/profile"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   Profile
                 </Link>
-              </li>
-              <li className="nav-btn">
+              </li> */}
+              {/* <li className="nav-btn">
                 {button ? (
                   <Link
                     to="/form"
@@ -80,12 +92,12 @@ function Navbar() {
                     </Button>
                   </Link>
                 )}
-              </li>
+              </li> */}
 
-              <li className="nav-btn">
+              {/* <li className="nav-btn">
                 {button ? (
                   <Link
-                    to="/sign-up"
+                    to="/login"
                     className="btn-link"
                     onClick={closeMobileMenu}
                   >
@@ -93,7 +105,7 @@ function Navbar() {
                   </Link>
                 ) : (
                   <Link
-                    to="/sign-up"
+                    to="/form"
                     className="btn-link"
                     onClick={closeMobileMenu}
                   >
@@ -102,7 +114,7 @@ function Navbar() {
                     </Button>
                   </Link>
                 )}
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

@@ -50,7 +50,7 @@ class AddRoster extends Component {
     const { roster } = this.state;
     console.log(roster.value);
     const rosterObj = { name: roster.value };
-    const url = `${Config.API_ENDPOINT}/roster`;
+    const url = `${Config.API_ENDPOINT}/classes`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -61,7 +61,7 @@ class AddRoster extends Component {
       .then((response) => response.json())
       .then((roster) => {
         this.context.addRoster(roster);
-        this.props.history.push(`/`);
+        this.props.history.push(`/roster`);
       });
   }
 }

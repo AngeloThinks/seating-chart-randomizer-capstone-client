@@ -11,9 +11,10 @@ import AddBoundaries from "./AddBoundaries";
 import ApiContext from "../../../ApiContext";
 import config from "../../../config";
 import "./RosterForm.css";
-import RosterForm from "./RosterForm";
+// import RandomizeStudent from "./RandomizeStudent";
+// import RosterForm from "./RosterForm";
 
-class Roster extends Component {
+export default class Roster extends Component {
   state = {
     students: [],
     rosters: [],
@@ -41,7 +42,7 @@ class Roster extends Component {
       });
   }
 
-//Event handlers in Roster Page
+  //Event handlers in Roster Page
 
   handleDeleteStudent = (studentId) => {
     this.setState({
@@ -71,18 +72,38 @@ class Roster extends Component {
     console.log(this.state.students);
   };
 
+  //This is now being handled by StudentListMain
+  // handleRandomizeStudent = (student) => {
+  //   console.log(student);
+  //   this.setState({
+  //     students: [...this.state.students, student],
+  //   });
+  //   console.log(this.state.students);
+  // };
 
-//Render Routes
+  //Render Routers
 
   renderNavRoutes() {
     return (
       <>
-        {["/roster","/roster/:rosterId"].map((path) => (
+        {[
+          "/roster",
+          "/roster/:rosterId",
+          "/roster/randomize/:roster_id/:teacher_id",
+        ].map((path) => (
           <Route exact key={path} path={path} component={StudentListNav} />
         ))}
-        <Route path="/roster/student/:studentId" component={StudentPageNav} />
-        <Route path="/roster/add-roster" component={StudentPageNav} />
-        <Route path="/roster/add-student" component={StudentPageNav} />
+        <Route
+          exact
+          path="/roster/student/:studentId"
+          component={StudentPageNav}
+        />
+        <Route exact path="/roster/new/add-roster" component={StudentPageNav} />
+        <Route
+          exact
+          path="/roster/new/add-student"
+          component={StudentPageNav}
+        />
       </>
     );
   }
@@ -93,10 +114,20 @@ class Roster extends Component {
         {["/roster", "/roster/:rosterId"].map((path) => (
           <Route exact key={path} path={path} component={StudentListMain} />
         ))}
-        <Route path="/roster/student/:studentId" component={StudentPageMain} />
-        <Route path="/roster/add-roster" component={AddRoster} />
-        <Route path="/roster/add-student" component={AddStudent} />
-        <Route path="/roster/roster-form" component={RosterForm} />
+        <Route
+          exact
+          path="/roster/randomize/:roster_id/:teacher_id"
+          component={StudentListMain}
+        />
+
+        <Route
+          exact
+          path="/roster/student/:studentId"
+          component={StudentPageMain}
+        />
+        <Route exact path="/roster/new/add-roster" component={AddRoster} />
+        <Route exact path="/roster/new/add-student" component={AddStudent} />
+        {/* <Route path="/roster/roster-form" component={RosterForm} /> */}
       </>
     );
   }
@@ -105,10 +136,11 @@ class Roster extends Component {
     const value = {
       students: this.state.students,
       rosters: this.state.rosters,
-      deleteStudent: this.handleDeletestudent,
+      deleteStudent: this.handleDeleteStudent,
       deleteRoster: this.handleDeleteRoster,
-      AddRoster: this.handleAddRoster,
-      AddStudent: this.handleAddStudent,
+      addRoster: this.handleAddRoster,
+      addStudent: this.handleAddStudent,
+      randomizeStudent: this.handleRandomizeStudent,
     };
     return (
       <ApiContext.Provider value={value}>
@@ -130,5 +162,3 @@ class Roster extends Component {
     );
   }
 }
-
-export default Roster;

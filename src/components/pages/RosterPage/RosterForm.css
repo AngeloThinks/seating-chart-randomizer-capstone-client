@@ -175,7 +175,7 @@
     .roster-form-container {
       margin: 100px auto;
       width: 1000px;
-      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.roster-2), 0 7px 20px 0 rgba(0, 0, 0, 0.roster-2);
+      /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.roster-2), 0 7px 20px 0 rgba(0, 0, 0, 0.roster-2); */
       position: relative;
       border-radius: 10px;
       height: 600px;
@@ -365,7 +365,7 @@
 /* //////////////////////////StudentListMain/////////////////////////////////// */
 
 
-.StudentListMain ul {
+.StudentListMain__ul {
   list-style-type: none;
   margin: 0;
   padding: 10px;
@@ -382,6 +382,12 @@
 .StudentListMain__add-student-button:hover {
   background-color: #29862e;
   color: white;
+}
+.StudentListMain {
+  background-color: #0b1f3a;
+  grid-area: main;
+  height: calc(100vh - 120px);
+  overflow: auto;
 }
 /* ////////////////////////////////Student/////////////////////////////////////// */
 
@@ -453,6 +459,15 @@
   color: #3a3939;
   max-width: 380px;
 }
+
+.StudentPageMain {
+  background-color: #0b1f3a;
+  grid-area: main;
+  height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+
 
 /* //////////////////////////////////////////////StudentPageNav/////////////////////////// */
 .StudentPageNav__back-button {

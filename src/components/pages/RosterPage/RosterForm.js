@@ -28,6 +28,7 @@ export default class RosterForm extends React.Component {
               {rosters.map((roster) => (
                 <option value={roster.id}>{roster.name}</option>
               ))}
+              <h1>HELLO STUPID</h1>
             </select>
             <button type="submit">Create Roster</button>
           </form>

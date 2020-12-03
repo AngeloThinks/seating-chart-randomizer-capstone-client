@@ -13,8 +13,7 @@ export default class Student extends React.Component {
   };
   static contextType = ApiContext;
 
-  handleClickDelete = (e) => {
-    e.preventDefault();
+  deleteStudent = () => {
     const studentId = this.props.id;
 
     fetch(`${Config.API_ENDPOINT}/students/${studentId}`, {
@@ -46,9 +45,10 @@ export default class Student extends React.Component {
         <button
           className="Student__delete"
           type="button"
-          onClick={this.handleClickDelete}
+          onClick={this.deleteStudent}
         >
-          <FontAwesomeIcon icon="trash-alt" /> Remove
+          {/* <FontAwesomeIcon icon="trash-alt" />  */}
+          Remove
         </button>
         {/* <div className="Student__dates">
           <div className="Student__dates-modified">
@@ -61,8 +61,15 @@ export default class Student extends React.Component {
   }
 }
 Student.propTypes = {
-  name: PropTypes.string,
   id: PropTypes.number,
-  modified: PropTypes.string,
+  first_name: PropTypes.string,
+  last_name: PropTypes.string,
+  // modified: PropTypes.string,
   onDeleteStudent: PropTypes.func,
 };
+
+// id: PropTypes.number,
+// teacher_id: PropTypes.string,
+// classes_id: PropTypes.string,
+// first_name: PropTypes.string,
+// last_name: PropTypes.string,
