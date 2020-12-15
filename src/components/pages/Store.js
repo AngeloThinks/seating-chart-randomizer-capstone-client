@@ -26,17 +26,17 @@ export const homeObjTwo = {
 }
 
 export const homeObjThree = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
-    topLine: 'Roost Profile',
-    headline: "Create your profile",
-    description: "Click on the box below to start creating your profile!",
-    hasButton: true,
-    buttonLabel: 'Get Started',
-    imgStart:'',
-    img: 'images/hen-chickens.svg',
-    alt: 'Chickens Hatching'
+    // lightBg: false,
+    // lightText: true,
+    // lightTextDesc: true,
+    // topLine: 'Roost Profile',
+    // headline: "Create your profile",
+    // description: "Click on the box below to start creating your profile!",
+    // hasButton: true,
+    // buttonLabel: 'Get Started',
+    // imgStart:'',
+    // img: 'images/hen-chickens.svg',
+    // alt: 'Chickens Hatching'
 
 }
 

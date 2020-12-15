@@ -73,13 +73,21 @@ export default class Roster extends Component {
   };
 
   //This is now being handled by StudentListMain
-  // handleRandomizeStudent = (student) => {
-  //   console.log(student);
-  //   this.setState({
-  //     students: [...this.state.students, student],
-  //   });
-  //   console.log(this.state.students);
-  // };
+
+  handleRandomizeStudent = (students) => {
+    let oldStudents = [...this.state.students]
+    students.forEach((student)=>{
+      let found = oldStudents.findIndex(s => s.id === student.id)
+        if(found >= 0)oldStudents.splice(found,1)
+        oldStudents.push(student)
+    })
+
+    this.setState({
+      students:oldStudents,
+    });
+    // console.log(this.state.students);
+  };
+
 
   //Render Routers
 
@@ -89,9 +97,14 @@ export default class Roster extends Component {
         {[
           "/roster",
           "/roster/:rosterId",
-          "/roster/randomize/:roster_id/:teacher_id",
+          "/roster/randomize/:roster_id/:classes_id",
         ].map((path) => (
-          <Route exact key={path} path={path} component={StudentListNav} />
+          <Route 
+          exact
+          key={path}
+          path={path}
+          component={StudentListNav} 
+          />
         ))}
         <Route
           exact
@@ -111,22 +124,38 @@ export default class Roster extends Component {
   renderMainRoutes() {
     return (
       <>
-        {["/roster", "/roster/:rosterId"].map((path) => (
-          <Route exact key={path} path={path} component={StudentListMain} />
-        ))}
-        <Route
+
+        {/* <Route
           exact
-          path="/roster/randomize/:roster_id/:teacher_id"
+          path="/roster/randomize/:classes_id"
+          // path="/roster/randomize/:rosterId/:teacherId"
+          component={StudentListMain}
+        /> */}
+        
+        {["/roster", "/roster/:rosterId"].map((path) => (
+          <Route 
+          exact 
+          key={path} 
+          path={path} 
           component={StudentListMain}
         />
+        ))}
 
         <Route
           exact
           path="/roster/student/:studentId"
           component={StudentPageMain}
         />
-        <Route exact path="/roster/new/add-roster" component={AddRoster} />
-        <Route exact path="/roster/new/add-student" component={AddStudent} />
+        <Route 
+        exact
+        path="/roster/new/add-roster"
+        component={AddRoster}
+        />
+        <Route
+        exact
+        path="/roster/new/add-student"
+        component={AddStudent}
+        />
         {/* <Route path="/roster/roster-form" component={RosterForm} /> */}
       </>
     );

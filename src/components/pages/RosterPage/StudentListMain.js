@@ -19,21 +19,13 @@ export default class StudentListMain extends React.Component {
   };
   static contextType = ApiContext;
 
-  handleRandomizeStudents() {
+  handleRandomizeStudents=() => {
     //        fetch(`${config.API_ENDPOINT}/randomize/${rosterId}/:teachers Id` ) when ready to implement login
      
-    const { roster_id } = this.props.match.params;
-    const { teachers_id } = this.props.match.params;
+    const { rosterId } = this.props.match.params;
     console.log(this.props.match.params);
 
-    // GET Randomize Postman URL http://localhost:8000/students/randomize/1/1
-      // "id": "6",
-      // "teachers_id": "1",
-      // "classes_id": "1",
-      // "first_name": "Grenville",
-      // "last_name": "Burgill"
-
-    fetch(`${config.API_ENDPOINT}/students/randomize/${roster_id}/1`)
+    fetch(`${config.API_ENDPOINT}/students/randomize/${rosterId}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(res.statusText);
@@ -41,28 +33,26 @@ export default class StudentListMain extends React.Component {
         return res.json();
       })
       .then((studentsData) => {
-        console.log(studentsData,"studentsData")
-        const temp = studentsData.map((studentData) => {
-          return (
-            <li key={studentData.id}>
-              <Student
-                id={studentData.id}
-                teacher_id={studentData.teachers_id}
-                classes_id={studentData.classses_id}
-                first_name={studentData.first_name}
-                last_name={studentData.last_name}
-              />
-            </li>
-          );
-        });
-        this.setState({
-          randomizeStudents: [...this.state.randomizeStudents, temp],
-        });
+        // console.log(studentsData,"studentsData")
+        // const temp = studentsData.filter(student => student.classes_id === rosterId).map((studentData) => {
+        //   return (
+        //     <li key={studentData.id}>
+        //       <Student
+        //         id={studentData.id}
+        //         teacher_id={studentData.teachers_id}
+        //         classes_id={studentData.classses_id}
+        //         first_name={studentData.first_name}
+        //         last_name={studentData.last_name}
+        //       />
+        //     </li>
+        //   );
+        // });
+        // this.setState({
+        //   randomizeStudents: [...this.state.randomizeStudents, temp],
+        // });
+        this.context.randomizeStudent(studentsData)
       })
       .catch((error) => console.log(error.message,"This is an error from studentData fetch"))
-  }
-  componentDidMount() {
-    this.handleRandomizeStudents();
   }
 
   render() {
@@ -75,7 +65,7 @@ export default class StudentListMain extends React.Component {
 
     //This is getting the data
     const studentsForRoster = getStudentsForRoster(students, rosterId);
-    console.log(studentsForRoster);
+    console.log(studentsForRoster,"studentsForRoster");
     
     //Prepping the data for output
     let studentsForRosterOutput = studentsForRoster.map((student) => {
@@ -115,7 +105,8 @@ export default class StudentListMain extends React.Component {
           <CircleButton
             tag={Link}
             //need to find route to update page
-            to={`/roster/randomize/${rosterId}/1`}
+            // to={`/roster/randomize/${rosterId}/1`}
+            onClick={this.handleRandomizeStudents}
             type="button"
             className="StudentListMain__add-student-button"
           >

@@ -9,7 +9,7 @@ import Roster from "./components/pages/RosterPage/Roster";
 import Footer from './components/pages/Footer/Footer';
 import Form from "./components/pages/SignupPage/Form";
 // import LoginForm from './components/pages/LoginPage/LoginForm'
-import SignupPage from './components/pages/SignupPage/FormSignup'
+// import SignupPage from './components/pages/SignupPage/FormSignup'
 
 
 
@@ -24,7 +24,7 @@ function App() {
         {/* <Route path='/Profile' component={Profile}/> */}
         <Route path='/Form' component={Form}/>
         {/* <Route path='/LoginForm' component={LoginForm}/> */}
-        <Route path='/SignupPage' component={SignupPage}/>
+        {/* <Route path='/SignupPage' component={SignupPage}/> */}
       </Switch>
       <Footer />
     </div>

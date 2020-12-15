@@ -3,7 +3,6 @@ import HeroSection from "../../HeroSection";
 import {
   homeObjOne,
   homeObjTwo,
-  homeObjThree,
 } from "../../pages/Store";
 
 function Home() {
@@ -11,7 +10,7 @@ function Home() {
     <>
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjTwo} />
-      <HeroSection {...homeObjThree} />
+      {/* <HeroSection {...homeObjThree} /> */}
     </>
   );
 }
