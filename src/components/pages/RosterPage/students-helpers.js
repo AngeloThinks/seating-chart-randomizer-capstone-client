@@ -12,9 +12,4 @@ export const getStudentsForRoster = (students = [], rosterId) =>
 export const countStudentsForRoster = (students = [], rosterId) =>
   students.filter((student) => student.classes_id === rosterId).length;
 
-  //randomize method
-// export const getStudentsByTeacherId = (students = [], rosterId) =>
-//   !rosterId
-//     ? students
-//     : students.filter((student) => student.teachers_id === rosterId);
 

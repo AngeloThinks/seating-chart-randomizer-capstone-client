@@ -19,9 +19,7 @@ export default class StudentListMain extends React.Component {
   };
   static contextType = ApiContext;
 
-  handleRandomizeStudents=() => {
-    //        fetch(`${config.API_ENDPOINT}/randomize/${rosterId}/:teachers Id` ) when ready to implement login
-     
+  handleRandomizeStudents = () => {
     const { rosterId } = this.props.match.params;
     console.log(this.props.match.params);
 
@@ -50,10 +48,12 @@ export default class StudentListMain extends React.Component {
         // this.setState({
         //   randomizeStudents: [...this.state.randomizeStudents, temp],
         // });
-        this.context.randomizeStudent(studentsData)
+        this.context.randomizeStudent(studentsData);
       })
-      .catch((error) => console.log(error.message,"This is an error from studentData fetch"))
-  }
+      .catch((error) =>
+        console.log(error.message, "This is an error from studentData fetch")
+      );
+  };
 
   render() {
     const { rosterId } = this.props.match.params;
@@ -65,8 +65,8 @@ export default class StudentListMain extends React.Component {
 
     //This is getting the data
     const studentsForRoster = getStudentsForRoster(students, rosterId);
-    console.log(studentsForRoster,"studentsForRoster");
-    
+    console.log(studentsForRoster, "studentsForRoster");
+
     //Prepping the data for output
     let studentsForRosterOutput = studentsForRoster.map((student) => {
       return (
@@ -81,13 +81,11 @@ export default class StudentListMain extends React.Component {
         </li>
       );
     });
-    console.log(studentsForRosterOutput)
+    console.log(studentsForRosterOutput);
 
     return (
       <section className="StudentListMain">
-        <ul>
-          {studentsForRosterOutput}
-        </ul>
+        <ul>{studentsForRosterOutput}</ul>
         <div className="StudentListMain__button-container">
           <CircleButton
             tag={Link}

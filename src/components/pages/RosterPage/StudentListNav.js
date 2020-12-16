@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
 import CircleButton from "./CircleButton";
 import "./RosterForm.css";
 import ApiContext from "../../../ApiContext";

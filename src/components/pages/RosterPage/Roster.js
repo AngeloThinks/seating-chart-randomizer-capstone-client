@@ -10,9 +10,8 @@ import AddStudent from "./AddStudent";
 import AddBoundaries from "./AddBoundaries";
 import ApiContext from "../../../ApiContext";
 import config from "../../../config";
+import RosterForm from "./RosterForm"
 import "./RosterForm.css";
-// import RandomizeStudent from "./RandomizeStudent";
-// import RosterForm from "./RosterForm";
 
 export default class Roster extends Component {
   state = {
@@ -156,7 +155,7 @@ export default class Roster extends Component {
         path="/roster/new/add-student"
         component={AddStudent}
         />
-        {/* <Route path="/roster/roster-form" component={RosterForm} /> */}
+        <Route path="/roster/roster-form" component={RosterForm} />
       </>
     );
   }
