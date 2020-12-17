@@ -31,8 +31,13 @@ Get Started Section
 ![Get Started Section](Roost-Get-Started.png)
 The Get Started section is located and accessed through the Landing Page. This section allows the user to click on the Get Started button, and the user is redirected to the rosters page.
 
+Footer Section
+![Footer Section](Roost-Footer.png)
+The Footer section is available through the entire app and on every page. It features the contact us, how it works, linkedin, instagram, and facebook links.
+
 Roster Page
 ![Roster Page](Roost-Roster-Page.png)
+![Roster Button](Roost-Button.png)
 The Roster Page displays the rosters on the left hand side. Followed by the Add Roster Button. It also shows the entire list of students. The user can also view the Add Student and Shuffle button at the bottom of the student list. 
 
 Add Roster Page
