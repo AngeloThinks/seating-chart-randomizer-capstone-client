@@ -12,7 +12,6 @@ export default class StudentListNav extends React.Component {
 
   render() {
     const { rosters = [], students = [] } = this.context;
-    // console.log(rosters);
     return (
       <div className="StudentListNav">
         <ul className="StudentListNav__list">

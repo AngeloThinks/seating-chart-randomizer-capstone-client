@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import { Link } from "react-router-dom";
-import {FaFacebook,FaInstagram,FaLinkedin,} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GiRooster } from "react-icons/gi";
 import { Button } from "../Button";
 
@@ -11,9 +11,7 @@ function Footer() {
       <section className="footer-subscription">
         <p className="footer-subscription-heading">Roost for Teacher's</p>
         <p className="footer-subscription-text">
-          <a href="mailto:angelogvazquez@gmail.com?subject='Hello'">
-            
-          </a>
+          <a href="mailto:angelogvazquez@gmail.com?subject='Hello'"></a>
           If you have any question please feel free to contact me.
         </p>
         <div className="input-areas">
@@ -47,9 +45,18 @@ function Footer() {
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>Social Media</h2>
-            <Link to="/">LinkedIn</Link>
-            <Link to="/">Facebook</Link>
-            <Link to="/">Instagram</Link>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/angelogvazquez"
+            >
+              LinkedIn
+            </a>
+            <a target="_blank" href="https://www.facebook.com/djangelov">
+              Facebook
+            </a>
+            <a target="_blank" href="https://www.instagram.com/angelo_v_its_me">
+              Instagram
+            </a>
           </div>
         </div>
       </div>
@@ -63,30 +70,30 @@ function Footer() {
           </div>
           <small className="website-rights">Angelo © 2020</small>
           <div className="social-icons">
-            <Link
-              className="social-icon-link"
-              to={"https://www.linkedin.com/in/angelogvazquez"}
+            <a 
               target="_blank"
+              className="social-icon-link"
+              href="https://www.linkedin.com/in/angelogvazquez"
               aria-label="LinkedIn"
             >
               <FaLinkedin />
-            </Link>
-            <Link
-              className="social-icon-link"
-              to={"https://www.facebook.com/djangelov/"}
+            </a>
+            <a
               target="_blank"
+              className="social-icon-link"
+              href={"https://www.facebook.com/djangelov"}
               aria-label="Facebook"
             >
               <FaFacebook />
-            </Link>
-            <Link
-              className="social-icon-link"
-              to={"https://www.instagram.com/angelo_v_its_me/"}
+            </a>
+            <a
               target="_blank"
+              className="social-icon-link"
+              href={"https://www.instagram.com/angelo_v_its_me"}
               aria-label="Instagram"
             >
               <FaInstagram />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
