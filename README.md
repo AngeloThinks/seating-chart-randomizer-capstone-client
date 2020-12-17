@@ -1,132 +1,42 @@
-# Capstone Project Title (to do now)
-<!-- One line description of what this app is doing and who is it for -->
-Roost - An app designed for teachers to randomize seating charts.
+Roost API Server- An app designed for teachers to randomize seating charts.
 
+Live Links:
+React app here: https://roost-client.vercel.app/
+and Node app here: https://afternoon-inlet-82835.herokuapp.com
 
-### 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+Description:
+API for Roost Application. The API stores students names, Teacher names, and classes. Together it will generate a roster that the user will be able to shuffle their students names. The Roost application is used to generate a shuffled list of names within a user created roster. A visitor and user are not required to login.
 
+As a visitor or user, you will be able to access the home, about, and roster pages. In the home page you will be able to preview the app and decide if you would like to get started with the use of the application. 
 
+Every User has the ability to create a roster.Within the roster a user is able to add and delete a student from their roster. Furthermore, a user is able to shuffle their list of students.
 
-### 2. User Stories (to do now)
-This app is for two types of users: a visitor and a logged-in user
+Technology Used:
+Front-End: HTML5, CSS3, JavaScript ES6, React
+Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
+Development Environment: Heroku, DBeaver, Vercel
 
-###### (Example) Landing Page (Importance - High) (Est: 1h)
-* as a visitor
-* I want to understand what I can do with this app (or sign up, or log in)
-* so I can decide if I want to use it
+https://roost-client.vercel.app/
 
-###### (Example) Login Page (Importance - High) (Est: 3h)
-* As a returning register user
-* I want to enter my password and username to use this app,
-* So I can have access to my account.
-
-###### (Example) Sign Up (Importance - High)  (Est: 3h)
-* As a visitor
-* I want to register to use this app
-* So I can create a personal account.
-
-###### (Example) Home Page (Importance - Medium)  (Est: 2h)
-* As a logged-in user,
-* I want to be able to preview the content of the app,
-* So i can decide what section I want to navigate to.
-
-
-
-### 3. Functionality (to do now)
-The app's functionality includes:
-* (Example) Every User has the ability to create an account
-
-
-
-### 4. Technology (done)
-* Front-End: HTML5, CSS3, JavaScript ES6, React
-* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
-* Development Environment: Heroku, DBeaver
-
-
-
-### 5. Wireframes (to do now)
-(Example) Landing Page
 :-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
-Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
+Landing Page
+![Landing Page/Home](Roost-Landing-Page.png)
+On the Landing/Home page you are able to access the Home and About sections. Also, you are able to access the Roster page.
+
+About Page
+![Landing Page/Home](Roost-Landing-Page.png)
+The About Page describes the purpose of the app and how to utlize the features of the app.
+
+Roster Page
+![Roster Page](Roost-Roster-Page.png)
+The Roster Page displays the rosters on the left hand side. Followed by the Add Roster Button. It also shows the entire list of students. The user can also view the Add Student and Shuffle button at the bottom of the student list. 
+
+Add Roster Page
+![Add Roster Page](Roost-Add-Roster-Page.png)
+The Add Roster Page allows the user to enter the name of their roster. The user is able to click on the create roster button once there is some data that is entered. This page also features a Back button that returns to the main Roster Page. 
+
+Add Student Page
+![Add Student Page](Roost-Add-Student-Page.png)
+The Add Student Page allows the user to input the name of their student. It also features a drop down menu offering the different rosters to add their student too. Once a roster is selected, the user is able to add the student to the roster. This page also features a back button returning the user to the main Roster Page.
 
 
-
-### 6. Front-end Structure - React Components Map (to do later)
-* (Example) __Index.js__ (stateless)
-    * __App.js__ (stateful)
-        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
-            * __Login.js__ (stateful) -
-            * __Register.js__ (stateful) -
-        * __Navbar.js__ (stateless) -
-
-
-
-### 7. Back-end Structure - Business Objects (to do later)
-* teachers (database table)(parent to students to table)
-    * id (auto-generated)
-    * first_name (varchar255) (validation alpha characters with spaces min.3 max.255)
-    * last_name (varchar255) (validation alpha characters with spaces min.3 max.255)
-    * email (varchar255) (email validation)
-    * password (varchar255) (at least 8 chars, at least one alpha and a special character validation)
-
-* classes (database table)(parent to students table)
-    * id (auto-generated)
-	* name (varchar255) (validation alpha characters with spaces min.3 max.255)
-
-* students (database table) (child to both teachers and classes table)
-    * id (auto-generated)
-    * teacher_id FOREIGN KEY TO TEACHERS TABLE (auto-generated)
-    * classes_id FOREIGN KEY TO CLASSES TABLE (auto-generated)
-	* first_name (varchar255) (validation alpha characters with spaces min.3 max.255)
-    * last_name (varchar255) (validation alpha characters with spaces min.3 max.255)
-
-
-### 8. API Documentation (to do later)
-API Documentation details:
-* GET/students
-    * URL: http://localhost:8000/students
-    * Response: 
-        ```json
-        [
-            {
-                "id": "2",
-                "teachers_id": "1",
-                "classes_id": "1",
-                "first_name": "Biron",
-                "last_name": "Doge"
-            }
-        ]
-        ```
-
-### 9. Screenshots (to do later)
-(Example) Landing Page
-:-------------------------:
-![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
-Register Page
-![Register Page](/github-images/screenshots/register-page-screenshot.png)
-
-
-
-### 10. Development Roadmap (to do later)
-This is v1.0 of the app, but future enhancements are expected to include:
-* (Example) add more functionality
-
-
-
-### 11. How to run it (done) enter Git clone commands
-Use command line to navigate into the project folder and run the following in terminal
-
-##### Local React scripts
-* To install the react project ===> npm install
-* To run react (on port 3000) ===> npm start
-* To run tests ===> npm run test
-
-##### Local Node scripts
-* To install the node project ===> npm install
-* To migrate the database ===> npm run migrate -- 1
-* To run Node server (on port 8000) ===> npm run dev
-* To run tests ===> npm run test
