@@ -11,7 +11,9 @@ function Footer() {
       <section className="footer-subscription">
         <p className="footer-subscription-heading">Roost for Teacher's</p>
         <p className="footer-subscription-text">
-          <a href="mailto:angelogvazquez@gmail.com?subject='Hello'"></a>
+          <a href="mailto:angelogvazquez@gmail.com?subject='Hello'">
+            
+          </a>
           If you have any question please feel free to contact me.
         </p>
         <div className="input-areas">
