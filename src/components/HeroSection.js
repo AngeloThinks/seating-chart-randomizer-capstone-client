@@ -18,7 +18,7 @@ function HeroSection({
 }) {
   function renderButton() {
     return hasButton ? (
-      <Link to="/Form">
+      <Link to="/roster">
         <Button buttonSize="btn--wide" buttonColor="blue">
           {buttonLabel}
         </Button>

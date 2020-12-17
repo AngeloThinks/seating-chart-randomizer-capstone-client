@@ -1,5 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CircleButton  from "./CircleButton";
 import { findStudent, findRoster } from "./students-helpers";
 import "./RosterForm.css";
@@ -30,7 +29,6 @@ export default class StudentPageNav extends React.Component {
           onClick={() => this.props.history.goBack()}
           className="StudentPageNav__back-button"
         >
-          <FontAwesomeIcon icon="chevron-left" />
           <br />
           Back
         </CircleButton>

@@ -1,16 +1,13 @@
 import React from "react";
 import HeroSection from "../../HeroSection";
-import {
-  homeObjOne,
-  homeObjTwo,
-} from "../../pages/Store";
+import { homeObjOne, homeObjTwo, homeObjThree } from "../../pages/Store";
 
 function Home() {
   return (
     <>
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjTwo} />
-      {/* <HeroSection {...homeObjThree} /> */}
+      <HeroSection {...homeObjThree} />
     </>
   );
 }

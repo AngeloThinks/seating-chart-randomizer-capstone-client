@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import StudentListNav from "./StudentListNav";
 import StudentPageNav from "./StudentPageNav";
 import StudentListMain from "./StudentListMain";
@@ -10,7 +10,7 @@ import AddStudent from "./AddStudent";
 import AddBoundaries from "./AddBoundaries";
 import ApiContext from "../../../ApiContext";
 import config from "../../../config";
-import RosterForm from "./RosterForm"
+import RosterForm from "./RosterForm";
 import "./RosterForm.css";
 
 export default class Roster extends Component {
@@ -51,11 +51,11 @@ export default class Roster extends Component {
     });
   };
 
-  handleDeleteRoster = (rosterId) => {
-    this.setState({
-      rosters: this.state.rosters.filter((roster) => roster.id !== rosterId),
-    });
-  };
+  // handleDeleteRoster = (rosterId) => {
+  //   this.setState({
+  //     rosters: this.state.rosters.filter((roster) => roster.id !== rosterId),
+  //   });
+  // };
 
   handleAddRoster = (roster) => {
     this.setState({
@@ -74,19 +74,18 @@ export default class Roster extends Component {
   //This is now being handled by StudentListMain
 
   handleRandomizeStudent = (students) => {
-    let oldStudents = [...this.state.students]
-    students.forEach((student)=>{
-      let found = oldStudents.findIndex(s => s.id === student.id)
-        if(found >= 0)oldStudents.splice(found,1)
-        oldStudents.push(student)
-    })
+    let oldStudents = [...this.state.students];
+    students.forEach((student) => {
+      let found = oldStudents.findIndex((s) => s.id === student.id);
+      if (found >= 0) oldStudents.splice(found, 1);
+      oldStudents.push(student);
+    });
 
     this.setState({
-      students:oldStudents,
+      students: oldStudents,
     });
     // console.log(this.state.students);
   };
-
 
   //Render Routers
 
@@ -98,19 +97,17 @@ export default class Roster extends Component {
           "/roster/:rosterId",
           "/roster/randomize/:roster_id/:classes_id",
         ].map((path) => (
-          <Route 
-          exact
-          key={path}
-          path={path}
-          component={StudentListNav} 
-          />
+          <Route exact key={path} path={path} component={StudentListNav} />
         ))}
         <Route
           exact
           path="/roster/student/:studentId"
           component={StudentPageNav}
         />
-        <Route exact path="/roster/new/add-roster" component={StudentPageNav} />
+        <Route 
+        exact 
+        path="/roster/new/add-roster" 
+        component={StudentPageNav} />
         <Route
           exact
           path="/roster/new/add-student"
@@ -123,21 +120,8 @@ export default class Roster extends Component {
   renderMainRoutes() {
     return (
       <>
-
-        {/* <Route
-          exact
-          path="/roster/randomize/:classes_id"
-          // path="/roster/randomize/:rosterId/:teacherId"
-          component={StudentListMain}
-        /> */}
-        
         {["/roster", "/roster/:rosterId"].map((path) => (
-          <Route 
-          exact 
-          key={path} 
-          path={path} 
-          component={StudentListMain}
-        />
+          <Route exact key={path} path={path} component={StudentListMain} />
         ))}
 
         <Route
@@ -145,16 +129,8 @@ export default class Roster extends Component {
           path="/roster/student/:studentId"
           component={StudentPageMain}
         />
-        <Route 
-        exact
-        path="/roster/new/add-roster"
-        component={AddRoster}
-        />
-        <Route
-        exact
-        path="/roster/new/add-student"
-        component={AddStudent}
-        />
+        <Route exact path="/roster/new/add-roster" component={AddRoster} />
+        <Route exact path="/roster/new/add-student" component={AddStudent} />
         <Route path="/roster/roster-form" component={RosterForm} />
       </>
     );
@@ -179,7 +155,7 @@ export default class Roster extends Component {
           <header className="Roster__header">
             <h1>
               <Link to="/roster">Rosters</Link>{" "}
-              <FontAwesomeIcon icon="check-double" />
+              {/* <FontAwesomeIcon icon="check-double" /> */}
             </h1>
           </header>
           <AddBoundaries>

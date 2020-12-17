@@ -17,7 +17,7 @@ export const homeObjTwo = {
     lightTextDesc: true,
     topLine: 'About Roost',
     headline: "What is Roost?",
-    description: "Roost is an app designed to help you build, and shuffle your seating charts.",
+    description: "Roost is an app designed to help you build, and shuffle your seating charts. First, add your roster. Then, add your students to your roster. Finally, click the shuffle button. It's that easy!",
     hasButton: false,
     buttonLabel: '',
     imgStart:'',
@@ -26,32 +26,18 @@ export const homeObjTwo = {
 }
 
 export const homeObjThree = {
-    // lightBg: false,
-    // lightText: true,
-    // lightTextDesc: true,
-    // topLine: 'Roost Profile',
-    // headline: "Create your profile",
-    // description: "Click on the box below to start creating your profile!",
-    // hasButton: true,
-    // buttonLabel: 'Get Started',
-    // imgStart:'',
-    // img: 'images/hen-chickens.svg',
-    // alt: 'Chickens Hatching'
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: true,
+    topLine: 'Roost Profile',
+    headline: "Create your Roster",
+    description: "Click on the box below to start creating your rosters!",
+    hasButton: true,
+    buttonLabel: 'Get Started',
+    imgStart:'',
+    img: 'images/hen-chickens.svg',
+    alt: 'Chickens Hatching'
 
-}
-
-export const homeObjFour = {
-
-    // lightBg: false,
-    // lightText: true,
-    // lightTextDesc: true,
-    // topLine: 'Roost Rosters',
-    // headline: "It's easy to start!",
-    // description: "Simply fill out the form, and add to your roster. Click the button below to get started",
-    // buttonLabel: 'Get Started',
-    // imgStart:'',
-    // img: 'images/small-chicks.svg',
-    // alt: 'Rooster'
 }
 
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
 import CircleButton from "./CircleButton";
 import "./RosterForm.css";
 import ApiContext from "../../../ApiContext";
@@ -13,7 +12,7 @@ export default class StudentListNav extends React.Component {
 
   render() {
     const { rosters = [], students = [] } = this.context;
-    console.log(rosters);
+    // console.log(rosters);
     return (
       <div className="StudentListNav">
         <ul className="StudentListNav__list">
@@ -39,7 +38,6 @@ export default class StudentListNav extends React.Component {
             type="button"
             className="StudentListNav__add-roster-button"
           >
-            {/* <FontAwesomeIcon icon="plus" /> */}
             Add Roster
           </CircleButton>
         </div>

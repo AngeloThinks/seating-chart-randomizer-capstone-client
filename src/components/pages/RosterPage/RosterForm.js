@@ -6,11 +6,10 @@ export default class RosterForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.state);
-
   };
   render() {
     const { className } = this.props;
-    
+
     return (
       <ApiContext.Consumer>
         {({ rosters }) => (
@@ -28,7 +27,6 @@ export default class RosterForm extends React.Component {
               {rosters.map((roster) => (
                 <option value={roster.id}>{roster.name}</option>
               ))}
-              <h1>HELLO STUPID</h1>
             </select>
             <button type="submit">Create Roster</button>
           </form>

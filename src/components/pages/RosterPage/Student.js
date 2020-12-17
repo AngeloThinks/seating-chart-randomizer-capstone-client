@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { format } from "date-fns";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./RosterForm.css";
 import PropTypes from "prop-types";
 import ApiContext from "../../../ApiContext";
@@ -34,7 +33,8 @@ export default class Student extends React.Component {
   };
 
   render() {
-    const { id, teachers_id, classes_id, first_name, last_name } = this.props;
+    // const { id, teachers_id, classes_id, first_name, last_name } = this.props;
+    const { id, first_name, last_name } = this.props;
     return (
       <div className="Student">
         <h2 className="Student__title">
@@ -47,15 +47,9 @@ export default class Student extends React.Component {
           type="button"
           onClick={this.deleteStudent}
         >
-          {/* <FontAwesomeIcon icon="trash-alt" />  */}
+          {/* <FontAwesomeIcon icon="trash-alt"  />  */}
           Remove
         </button>
-        {/* <div className="Student__dates">
-          <div className="Student__dates-modified">
-            Modified{" "}
-            <span className="Date">{format(modified, "Do MMM YYYY")}</span>
-          </div>
-        </div> */}
       </div>
     );
   }
@@ -64,12 +58,5 @@ Student.propTypes = {
   id: PropTypes.number,
   first_name: PropTypes.string,
   last_name: PropTypes.string,
-  // modified: PropTypes.string,
   onDeleteStudent: PropTypes.func,
 };
-
-// id: PropTypes.number,
-// teacher_id: PropTypes.string,
-// classes_id: PropTypes.string,
-// first_name: PropTypes.string,
-// last_name: PropTypes.string,
