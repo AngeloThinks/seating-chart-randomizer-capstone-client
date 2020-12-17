@@ -27,6 +27,10 @@ About Page
 ![About Page](Roost-About-Page.png)
 The About Page describes the purpose of the app and how to utlize the features of the app.
 
+Get Started Section
+![Get Started Section](Roost-Get-Started.png)
+The Get Started section is located and accessed through the Landing Page. This section allows the user to click on the Get Started button, and the user is redirected to the rosters page.
+
 Roster Page
 ![Roster Page](Roost-Roster-Page.png)
 The Roster Page displays the rosters on the left hand side. Followed by the Add Roster Button. It also shows the entire list of students. The user can also view the Add Student and Shuffle button at the bottom of the student list. 
