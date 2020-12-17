@@ -24,7 +24,7 @@ Landing Page
 On the Landing/Home page you are able to access the Home and About sections. Also, you are able to access the Roster page.
 
 About Page
-![Landing Page/Home](Roost-Landing-Page.png)
+![About Page](Roost-About-Page.png)
 The About Page describes the purpose of the app and how to utlize the features of the app.
 
 Roster Page
